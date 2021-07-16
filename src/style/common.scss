@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import './flix.scss';
 
 *{
     margin: 0;
@@ -8,4 +10,38 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+}
+
+.container-fluid{
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 .9rem;
+}
+
+li{
+    list-style: none;
+}
+
+.icon::before{
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+a{
+    text-decoration: none;
+
+    &:hover{
+        color: #20AD96;
+    }
+}
+
+input:focus {
+    outline: none;
+}
+
+button{
+    cursor: pointer;
 }
