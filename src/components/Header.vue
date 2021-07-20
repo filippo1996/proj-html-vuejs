@@ -71,7 +71,10 @@ export default {
 
 header{
   height: $height-header;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  z-index: 50;
+  background: #fff;
 }
 
 .header-wrap{

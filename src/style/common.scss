@@ -76,3 +76,24 @@ button{
     display: flex;
     flex-direction: column;
 }
+
+.btn{
+    padding: 10px 20px;
+    border: 1px solid $color-lightgrey;
+    border-radius: 5px;
+
+    &:hover{
+        background: $color-secondary;
+        color: #fff;
+    }
+}
+
+.btn-primary{
+    background: $color-primary;
+    border: 0;
+    color: #fff;
+}
+
+.btn-xl{
+    padding: 15px 25px;
+}
