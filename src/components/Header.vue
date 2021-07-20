@@ -1,66 +1,68 @@
 <template>
-    <header>
-        <div class="container-fluid h-100">
-            <div class="row">
-                <div class="col-12">
-                    <div class="header-wrap">
-                        <div class="branding">
-                            <a href="#">
-                                <img class="logo" src="@/assets/img/dark-logo.png" alt="logo">
-                            </a>
-                        </div>
-                        <nav class="navbar">
-                            <ul>
-                                <li>
-                                    <a href="#">Home<span class="icon sub-menu"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Home<span class="icon sub-menu"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Home<span class="icon sub-menu"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Home<span class="icon sub-menu"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Home<span class="icon sub-menu"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#">Home<span class="icon sub-menu"></span></a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="header-language">
-                            <div class="language">
-                                <a href="#">
-                                    <img class="ico-language" src="@/assets/img/en.png" alt="icona bandiara">
-                                    <span class="name-language">English</span>
-                                    <span class="icon sub-menu"></span>
-                                </a>
-                                <a class="header-login" href="#">
-                                    <i class="far fa-user-circle"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="header-search">
-                            <form>
-                                <div class="d-flex justify-content-around">
-                                    <input class="input-search" type="text" placeholder="Search...">
-                                    <button class="btn-search" type="button"><i class="fas fa-search"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+  <header class="header-top">
+    <div class="container-fluid h-100">
+      <div class="row">
+        <div class="col-12">
+          <div class="header-wrap">
+            <div class="branding">
+              <a href="#">
+                <img class="logo" src="@/assets/img/dark-logo.png" alt="logo">
+              </a>
             </div>
+            <nav class="navbar">
+              <ul>
+                <li v-for="(item, index) in items" :key="index" :data-toggle="item['data-toggle']" :aria-expand="item['aria-expand']">
+                  <a :data-menu="item['data-menu']" :href="item.link">{{item.name}}<span :class="item.class"></span></a>
+                  <ul :class="item['sub-class']">
+                    <div v-for="(sub, index) in item.sub" :key="index" :class="item.sub.length ? 'col-dropdown' : null">
+                      <li v-for="(menu, index) in sub" :key="index">
+                        <a :class="menu.class" :href="menu.link">{{menu.name}}
+                          <img v-if="menu.image" :src="require(`@/assets/img/${menu.image.path}`)">
+                        </a>
+                      </li>
+                    </div>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+            <div class="header-language">
+              <div class="language">
+                <a href="#">
+                  <img class="ico-language" src="@/assets/img/en.png" alt="icona bandiara">
+                  <span class="name-language">English</span>
+                  <span class="icon sub-menu"></span>
+                </a>
+                <a class="header-login" href="#">
+                  <i class="far fa-user-circle"></i>
+                </a>
+              </div>
+            </div>
+            <div class="header-search">
+              <form>
+                <div class="d-flex justify-content-around">
+                  <input class="input-search" type="text" placeholder="Search...">
+                  <button class="btn-search" type="button"><i class="fas fa-search"></i></button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 </template>
 
 <script>
+import dropdown from '@/dropdown.js';
+
 export default {
-    name: 'Header'
+  name: 'Header',
+  props: {
+    items: Array
+  },
+  mounted(){
+    dropdown();
+  }
 }
 </script>
 
@@ -69,6 +71,7 @@ export default {
 
 header{
   height: $height-header;
+  position: relative;
 }
 
 .header-wrap{
@@ -102,15 +105,6 @@ nav{
 li{
   display: inline-block;
   margin: 0 15px;
-
-  a{
-    color: $color-secondary;
-    font-size: 16px;
-
-    &:hover{
-      border-bottom: 1px solid;
-    }
-  }
 }
 
 .sub-menu{
@@ -164,5 +158,9 @@ li{
   background: none;
 
   i{font-size: 1.2rem;}
+}
+
+.dropdown-menu{
+  top: $height-header;
 }
 </style>

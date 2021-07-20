@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import './flix.scss';
+@import './variables.scss';
 
 *{
     margin: 0;
@@ -32,9 +33,10 @@ li{
 
 a{
     text-decoration: none;
+    color: $color-secondary;
 
     &:hover{
-        color: #20AD96;
+        color: $color-primary;
     }
 }
 
@@ -44,4 +46,33 @@ input:focus {
 
 button{
     cursor: pointer;
+}
+
+
+.dropdown-menu{
+    display: none;
+    background: #fff;
+    position: absolute;
+    padding: 20px 40px 20px 0;
+    border-bottom: 4px solid $color-primary;
+}
+
+
+.mega-dropdown{
+    flex-direction: row;
+    justify-content: space-between;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 20px 150px;
+}
+
+.dropdown-item{
+    line-height: 2.3;
+}
+
+.col-dropdown{
+    display: flex;
+    flex-direction: column;
 }
