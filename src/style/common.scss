@@ -19,6 +19,11 @@ body{
     padding: 0 .9rem;
 }
 
+.container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
 li{
     list-style: none;
 }
@@ -81,6 +86,8 @@ button{
     padding: 10px 20px;
     border: 1px solid $color-lightgrey;
     border-radius: 5px;
+    border-color: $color-lightgrey;
+    color: $color-primary;
 
     &:hover{
         background: $color-secondary;
@@ -96,4 +103,9 @@ button{
 
 .btn-xl{
     padding: 15px 25px;
+}
+
+
+.background-lightgrey{
+    background: #f8f8f8;
 }
