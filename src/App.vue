@@ -4,7 +4,8 @@
     <Jumbotron/>
     <main>
       <Section nameClass="container-fluid" component="Services" subTitle="Let’s Dream Big Together" title="We are pioneers of the digital approach, using leading-edge technology to simplify procedures and apply executive coaching in the new age of digitalization."/>
-      <Section nameClass="background-lightgrey container-fluid" component="Carousel" subTitle="Let’s Dream Big Together" title="Explore How can I help you"/>
+      <Section nameClass="background-lightgrey" component="Carousel" subTitle="Let’s Dream Big Together" title="Explore How can I help you"/>
+      <Section nameClass="" component="GridProduct" subTitle="Let’s Dream Big Together" title="Explore How can I help you"/>
     </main>
     <footer></footer>
   </div>
