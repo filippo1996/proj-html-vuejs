@@ -23,6 +23,7 @@
         </div>
       </section>
       <!-- fine sezione faq + video youtube -->
+      <Section component="Events" subTitle="Wanna transform your life?" title="Upcoming Events"/>
     </main>
     <footer></footer>
   </div>
