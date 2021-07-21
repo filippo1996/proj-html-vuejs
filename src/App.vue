@@ -25,6 +25,7 @@
       <!-- fine sezione faq + video youtube -->
       <Section component="Events" subTitle="Wanna transform your life?" title="Upcoming Events"/>
       <Section nameClass="background-lightgrey" component="Testimonials" subTitle="People are praising Maxcoach" title="What make they love us?"/>
+      <Newsletter/>
     </main>
     <footer></footer>
   </div>
@@ -36,6 +37,7 @@ import menu from '@/api/menu.js';
 import Jumbotron from './components/Jumbotron.vue';
 import Section from './components/Section.vue';
 import Faq from './components/Faq.vue';
+import Newsletter from './components/Newsletter.vue';
 
 export default {
   name: 'App',
@@ -43,7 +45,8 @@ export default {
     Header,
     Jumbotron,
     Section,
-    Faq
+    Faq,
+    Newsletter
   },
   data(){
     return{
