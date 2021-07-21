@@ -24,6 +24,7 @@
       </section>
       <!-- fine sezione faq + video youtube -->
       <Section component="Events" subTitle="Wanna transform your life?" title="Upcoming Events"/>
+      <Section nameClass="background-lightgrey" component="Testimonials" subTitle="People are praising Maxcoach" title="What make they love us?"/>
     </main>
     <footer></footer>
   </div>
