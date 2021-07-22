@@ -27,7 +27,7 @@
       <Section nameClass="background-lightgrey" component="Testimonials" subTitle="People are praising Maxcoach" title="What make they love us?"/>
       <Newsletter/>
     </main>
-    <footer></footer>
+    <Footer/>
   </div>
 </template>
 
@@ -38,6 +38,7 @@ import Jumbotron from './components/Jumbotron.vue';
 import Section from './components/Section.vue';
 import Faq from './components/Faq.vue';
 import Newsletter from './components/Newsletter.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
@@ -46,7 +47,8 @@ export default {
     Jumbotron,
     Section,
     Faq,
-    Newsletter
+    Newsletter,
+    Footer
   },
   data(){
     return{
